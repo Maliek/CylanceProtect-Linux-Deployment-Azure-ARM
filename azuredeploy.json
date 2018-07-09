@@ -231,11 +231,11 @@
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
         "type": "CustomScriptExtension",
-        "typeHandlerVersion": "1,8",
+        "typeHandlerVersion": "1.8",
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', variables('ScriptFileName'), parameters('_artifactsLocationSasToken'))]"
+            "[concat(parameters('_artifactsLocation'), '/', variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
           ],
           "commandToExecute": "[concat('sudo ./install-cylance.sh',' ', parameters('CylanceInstallToken'),' ', variables('CylancePROTECTRpm'),' ', variables('CylancePROTECTUIRpm'))]"
         }
