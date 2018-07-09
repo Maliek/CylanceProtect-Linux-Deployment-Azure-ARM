@@ -22,12 +22,13 @@
     },
     "centOSVersion": {
       "type": "string",
-      "defaultValue": "7.3",
+      "defaultValue": "7.4",
       "allowedValues": [
         "6.5",
         "6.8",
         "7.1",
-        "7.3"
+        "7.3",
+        "7.4"
       ],
       "metadata": {
         "description": "The CentOS version for the VM. This will pick a fully patched image of this given Centos version, specifically for HPC."
