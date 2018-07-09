@@ -230,14 +230,16 @@
         "displayName": "InstallCylance"
       },
       "properties": {
-        "publisher": "Microsoft.Azure.Extensions",
-        "type": "CustomScript",
-        "typeHandlerVersion": "2.0",
+        "publisher": "Microsoft.OSTCExtensions",
+        "type": "CustomScriptForLinux",
+        "typeHandlerVersion": "1.5",
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
             "[concat(parameters('_artifactsLocation'), '/', variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
-          ],
+          ]
+        },
+        "protectedSettings": {
           "commandToExecute": "[concat('sudo ./install-cylance.sh',' ', parameters('CylanceInstallToken'))]"
         }
       }
