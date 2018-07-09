@@ -10,4 +10,4 @@ cd /opt/cylance
 touch config_defaults.txt
 echo InstallToken=$TOKEN > config_defaults.txt
 
-yum install $2 $3
+# yum install $2 $3
