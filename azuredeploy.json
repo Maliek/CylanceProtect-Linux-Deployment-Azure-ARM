@@ -230,8 +230,8 @@
       },
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
-        "type": "CustomScriptExtension",
-        "typeHandlerVersion": "1.8",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
