@@ -42,8 +42,9 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_A8",
+      "defaultValue": "Standard_D1_v2",
       "allowedValues": [
+        "Standard_D1_v2",
         "Standard_A8",
         "Standard_A9",
         "Standard_H16r",
