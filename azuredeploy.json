@@ -83,8 +83,10 @@
     "nicName": "myVMNic",
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
+    "CylancePROTECTRpm": "CylancePROTECT.el7.rpm",
+    "CylancePROTECTUIRpm": "CylancePROTECTUI.el7.rpm",
     "scriptFileName": "install-cylance.sh",
-    "scriptFolder": "scripts",
+    "scriptFolder": ".",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets',variables('virtualNetworkName'), variables('subnetName'))]",
@@ -228,14 +230,14 @@
       },
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
-        "type": "CustomScript",
-        "typeHandlerVersion": "2.0",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1,8",
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "[concat(parameters('_artifactsLocation'), '/', variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
+            "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', variables('ScriptFileName'), parameters('_artifactsLocationSasToken'))]"
           ],
-          "commandToExecute": "[concat('sh install-cylance.sh',' ', parameters('CylanceInstallToken'))]"
+          "commandToExecute": "[concat('sudo ./install-cylance.sh',' ', parameters('CylanceInstallToken'),' ', variables('CylancePROTECTRpm'),' ', variables('CylancePROTECTUIRpm'))]"
         }
       }
     }
