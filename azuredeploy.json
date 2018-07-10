@@ -242,7 +242,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat('echo',' ',parameters('adminPassword'),' ','|',' ','sh install-cylance.sh', ' ', parameters('CylanceInstallToken'))]"
+          "commandToExecute": "[concat('echo',' ',parameters('adminPassword'),' ','|',' ','sudo -S sh install-cylance.sh', ' ', parameters('CylanceInstallToken'))]"
         }
       }
     }
