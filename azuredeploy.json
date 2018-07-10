@@ -242,7 +242,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat('sh install-cylance.sh',' ', parameters('CylanceInstallToken'),' ', parameters('_artifactsLocation'),' ', parameters('_artifactsLocationSasToken'))]"
+          "commandToExecute": "[concat('sh install-cylance.sh',' ', parameters('CylanceInstallToken'))]"
         }
       }
     }
