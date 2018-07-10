@@ -22,13 +22,13 @@
     },
     "centOSVersion": {
       "type": "string",
-      "defaultValue": "7.4",
+      "defaultValue": "7.2",
       "allowedValues": [
         "6.5",
         "6.8",
         "7.1",
         "7.3",
-        "7.4"
+        "7.2"
       ],
       "metadata": {
         "description": "The CentOS version for the VM. This will pick a fully patched image of this given Centos version, specifically for HPC."
@@ -79,8 +79,8 @@
   },
   "variables": {
     "addressPrefix": "10.0.0.0/16",
-    "imagePublisher": "OpenLogic",
-    "imageOffer": "CentOS-HPC",
+    "imagePublisher": "RedHat",
+    "imageOffer": "RHEL",
     "nicName": "myVMNic",
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
@@ -94,7 +94,8 @@
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'singvm')]",
     "storageAccountType": "Standard_LRS",
     "virtualNetworkName": "MyVNET",
-    "vmName": "MyCylanceVM"
+    "vmName": "MyCylanceVM",
+    "dataDisk1Name": "[concat(uniquestring(variables('vmName')), 'datadisk1')]"
   },
   "resources": [
     {
@@ -197,7 +198,8 @@
           },
           "dataDisks": [
             {
-              "diskSizeGB": 1023,
+              "name": "[variables('dataDisk1Name')]",
+              "diskSizeGB": 100,
               "lun": 0,
               "createOption": "Empty"
             }
