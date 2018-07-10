@@ -11,6 +11,8 @@ echo InstallToken=$TOKEN > config_defaults.txt
 wget -O /opt/cylance/CylancePROTECT.el7.rpm "https://github.com/Maliek/CylanceProtect-Linux-Deployment-Azure-ARM/raw/master/CylancePROTECT.el7.rpm"
 wget -O /opt/cylance/CylancePROTECTUI.el7.rpm "https://github.com/Maliek/CylanceProtect-Linux-Deployment-Azure-ARM/raw/master/CylancePROTECTUI.el7.rpm"
 
+yum clean all
+
 yum makecache fast
 
 yum -y install CylancePROTECT.el7.rpm CylancePROTECTUI.el7.rpm
