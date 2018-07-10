@@ -242,7 +242,7 @@
           ]
         },
         "protectedSettings": {
-          "commandToExecute": "[concat('sudo sh  install-cylance.sh',' ', parameters('CylanceInstallToken'))]"
+          "commandToExecute": "[concat('sh install-cylance.sh',' ', parameters('CylanceInstallToken'))]"
         }
       }
     }
