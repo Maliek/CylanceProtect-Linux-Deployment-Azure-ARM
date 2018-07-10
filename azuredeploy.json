@@ -20,18 +20,14 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
-    "centOSVersion": {
+    "redhatVersion": {
       "type": "string",
       "defaultValue": "7.2",
       "allowedValues": [
-        "6.5",
-        "6.8",
-        "7.1",
-        "7.3",
         "7.2"
       ],
       "metadata": {
-        "description": "The CentOS version for the VM. This will pick a fully patched image of this given Centos version, specifically for HPC."
+        "description": "The RedHAT version for the VM. This will pick a fully patched image of this given RedHat version."
       }
     },
     "CylanceInstallToken": {
@@ -190,7 +186,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('centOSVersion')]",
+            "sku": "[parameters('redhatVersion')]",
             "version": "latest"
           },
           "osDisk": {
