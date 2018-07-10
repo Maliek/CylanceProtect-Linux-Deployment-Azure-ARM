@@ -13,4 +13,4 @@ wget -O /opt/cylance/CylancePROTECTUI.el7.rpm "https://github.com/Maliek/Cylance
 
 yum makecache fast
 
-yum install CylancePROTECT.el7.rpm CylancePROTECTUI.el7.rpm
+yum -y install CylancePROTECT.el7.rpm CylancePROTECTUI.el7.rpm
